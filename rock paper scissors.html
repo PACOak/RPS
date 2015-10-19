@@ -1,0 +1,160 @@
+<!DOCTYPE html>			//andrew kaehler
+
+<html>					// 1 hour 30 minutes
+						// 100% completed
+	<head>
+		<title>Rock, paper scissors</title>
+	</head>
+
+	<body>
+		<script>
+		var playAgain = "yes";
+		var tie = false;
+		while (playAgain === "yes")
+		{
+			var uChoice = prompt("rock, paper, scissors, lizard, or spock?");
+			while ((uChoice != "rock") || (uChoice != "paper") || (uChoice != "scissors") || (uChoice != "lizard") || (uChoice != "spock"))
+			{
+				uChoice = prompt("rock, paper, scissors, lizard, or spock?");
+			}
+			var cChoice = Math.random();
+			var cString;
+			uChoice = uChoice.toLower();
+			if (cChoice <= .2)
+			{
+				cString = "rock";
+			}
+			else if ((cChoice <= .4) && (cChoice > .2))
+			{
+				cString = "paper";
+			}
+			else if ((cChoice <= .6) && (cChoice > .4))
+			{
+				cString = "scissors";
+			}
+			else if ((cChoice <= .8) && (cChoice > .6))
+			{
+				cString = "lizard";
+			}
+			else
+			{
+				cString = "spock";
+			}
+			
+			var findWinner = function(uChoice, cString)
+			{
+				if (uChoice === cString)
+				{
+					return "Tie game.";
+					playAgain = "yes";
+					tie = true;
+				}
+				else if ((uChoice === "paper") && (cString === "rock"))
+				{
+					return "User wins with paper.";
+				}
+				else if ((uChoice === "paper") && (cString === "scissors"))
+				{
+					return "Computer wins with scissors.";
+				}
+				else if ((uChoice === "paper") && (cString === "lizard"))
+				{
+					return "Computer wins with lizard."
+				}
+				else if ((uChoice === "paper") && (cString === " spock"))
+				{
+					return "User wins with paper";
+				}
+				
+				
+				else if ((uChoice === "rock") && (cString === "paper"))
+				{
+					return "Computer wins with paper.";
+				}
+				else if ((uChoice === "rock") && (cString === "scissors"))
+				{
+					return "User wins with rock.";
+				}
+				else if ((uChoice === "rock") && (cString === "lizard"))
+				{
+					return "User wins with rock.";
+				}
+				else if ((uChoice === "rock") && (cString === "spock"))
+				{
+					return "Computer wins with spock.";
+				}
+				
+				
+				
+				else if ((uChoice === "scissors") && (cString === "paper"))
+				{
+					return "User wins with scissors.";
+				}
+				else if ((uChoice === "scissors") && (cString === "rock"))
+				{
+					return "Computer wins with rock.";
+				}
+				else if ((uChoice === "scissors") && (cString === "lizard"))
+				{
+					return "User wins with scissors.";
+				}
+				else if ((uChoice === "scissors") && (cString === "spock"))
+				{
+					return "Computer wins with spock.";
+				}
+				
+				
+				
+				else if ((uChoice === "lizard") && (cString === "rock"))
+				{
+					return "Computer wins with rock.";
+				}
+				else if ((uChoice === "lizard") && (cString === "paper"))
+				{
+					return "User wins with lizard.";
+				}
+				else if ((uChoice === "lizard") && (cString === "scissors"))
+				{
+					return "Computer wins with scissors.";
+				}
+				else if ((uChoice === "lizard") && (cString === "spock"))
+				{
+					return "User wins with lizard.";
+				}
+				
+				
+				
+				else if ((uChoice === "spock") && (cString === "rock"))
+				{
+					return "User wins with spock.";
+				}
+				else if ((uChoice === "spock") && (cString === "paper"))
+				{
+					return "Computer wins with paper.";
+				}
+				else if ((uChoice === "spock") && (cString === "scissors"))
+				{
+					return "User wins with spock.";
+				}
+				else if ((uChoice === "spock") && (cString === "lizard"))
+				{
+					return "Computer wins with lizard.";
+				}
+				
+				
+				
+				else
+				{
+					return "Error1";
+				}
+			}
+			if (tie != true)
+			{
+				console.log("Would you like to play again?");
+				playAgain = prompt("yes or no?");
+			}
+		}
+		</script>
+	</body>
+
+</html>
